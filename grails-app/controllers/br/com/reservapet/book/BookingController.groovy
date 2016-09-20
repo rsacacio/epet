@@ -55,9 +55,10 @@ class BookingController {
         breed.category.plans.each{Plan plan ->
             if(plan.days == params.days as int){
                 respond plan : new PlanResumeDto(id: plan.id, name: plan.name, ammount: plan.ammount)
+                return
             }
         }
-        respond plan: {}
+        respond plan: ''
     }
 
 }
