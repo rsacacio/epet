@@ -1,0 +1,69 @@
+{
+  "HEADER": {
+    "DASHBOARD": "Dashboard",
+    "STORES": "Lojas",
+    "CATEGORIES": "Categorias",
+    "TICKET_TYPES": "Tipos de promoções",
+    "ENTER_FULLSCREEN": "Fullscreen",
+    "EXIT_FULLSCREEN": "Normal"
+  },
+  "MESSAGE": {
+    "FIELD_REQUIRED": "Este campo é de preenchimento obrigatório",
+    "FORMAT_INVALID": "Formato inválido",
+    "ARE_YOU_SURE_ITEM": "Você confirma a exclusão do item {{itemName}}?",
+    "DELETION_IS_NOT_RECOVER": "Esta ação não poderá ser desfeita!",
+    "YES_I_SURE": "Sim eu tenho!",
+    "NO_THANKS": "Não, obrigado!",
+    "DELETED": "Removido!",
+    "DELETED_WITH_SUCCESS": "Item excluído com sucesso."
+  },
+  "CALENDAR":
+  {
+    "MONTHS":
+    {
+      "JANUARY": "Janeiro",
+      "FEBRUARY": "Fevereiro",
+      "MARCH": "Março",
+      "APRIL": "Abril",
+      "MAY": "Maio",
+      "JUNE": "Junho",
+      "JULY": "Julho",
+      "AUGUST": "Agosto",
+      "SEPTEMBER": "Setembro",
+      "OCTOBER": "Outubro",
+      "NOVEMBER": "Novembro",
+      "DECEMBER": "Dezembro"
+    },
+
+    "RANGE":
+    {
+      "TODAY": "Hoje",
+      "LAST_7_DAYS": "Últimos 7 dias",
+      "LAST_30_DAYS": "Últimos 30 dias",
+      "THIS_MONTH": "Este mês",
+      "LAST_MONTH": "Último mês"
+    },
+
+    "DAYS_OF_WEEK":
+    {
+      "A_SUNDAY": "D",
+      "A_MONDAY": "S",
+      "A_TUESDAY": "T",
+      "A_WEDNESDAY": "Q",
+      "A_THURSDAY": "Q",
+      "A_FRIDAY": "S",
+      "A_SATURDAY": "S"
+    },
+
+    "APPLY": "Aplicar",
+    "CLOSE": "Fechar",
+    "FROM": "A partir de",
+    "UNTIL": "Até",
+    "PERSONALITY_SEARCH": "Busca personalizada",
+    "PERIOD_SELECTED_INVALID": "Período selecionado inválido",
+    "PERIOD_TYPED_INVALID": "Período digitado inválido",
+    "FORMAT_RANGE": "DD/MM/YYYY",
+    "FORMAT": "dd/MM/yyyy",
+    "FORMAT_TIME": "dd/MM/yyyy HH:mm:ss"
+  }
+}

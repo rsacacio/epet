@@ -1,0 +1,78 @@
+<div class="animated fadeInRight">
+    <div class="ibox-title">
+        <h3>
+            listar
+        </h3>
+    </div>
+    <div class="ibox-content">
+        <div ng-if="BreedListCtrl.breeds.length > 0">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="text" placeholder="Procurar" ng-model="BreedListCtrl.search" class="input-sm form-control">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-primary"> <i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-4 m-b-xs col-sm-offset-4">
+                    <div class="pull-right">
+                        <div data-toggle="buttons" class="btn-group">
+                            <label class="btn btn-sm btn-white">
+                                <input type="radio" id="option1" name="options">
+                                Ativo
+                            </label>
+                            <label class="btn btn-sm btn-white active">
+                                <input type="radio" id="option2" name="options">
+                                Inativo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive" ng-if="(BreedListCtrl.breeds | filter: BreedListCtrl.search).length > 0">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="breed in BreedListCtrl.breeds | filter: BreedListCtrl.search">
+                        <td>
+                            <span keywords="BreedListCtrl.search" highlight="breed.name"></span>
+                        </td>
+                        <td>
+                            <span keywords="BreedListCtrl.search" highlight="breed.description"></span>
+                        </td>
+                        <td>
+                            <span keywords="BreedListCtrl.search" highlight="breed.category.name"></span>
+                        </td>
+                        <td>
+                            <span class="label" ng-class="BreedListCtrl.statusClass(breed.status)">{{ 'CATEGORIES.LIST.' + category.status.name | translate }}</span>
+                        </td>
+                        <td>
+                            <a class="btn btn-white btn-xs pull-right" ng-click="BreedListCtrl.remove(breed)">
+                                <i class="fa fa-trash"></i> Remover
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning" ng-if="(BreedListCtrl.breeds | filter: BreedListCtrl.search).length == 0">
+                Nenhuma raça encontrada com os critérios de busca.
+            </div>
+        </div>
+        <div class="alert alert-info" ng-if="BreedListCtrl.breeds.length == 0">
+            Nenhuma raça adicionada.
+            <a class="alert-link" ui-sref="private.breeds.add">
+                Clique para adicionar.
+            </a>
+        </div>
+    </div>
+</div>

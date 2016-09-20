@@ -1,0 +1,77 @@
+<div ng-include="'assets/reservapetClient/partials/public/header/headerPublic.html'"></div>
+<div class="container-fluid height-full">
+    <div class="container-fluid" style="margin-top: 80px;">
+        <div class="page-header">
+            <h1>Reservar hospedagem</h1>
+        </div>
+        <div class="ibox-content">
+            <form name="form" novalidate>
+                <div class="form-group" show-errors>
+                    <label>Check-in / Check-out</label>
+                    <reservapet-date-picker single="false" required="true" ng-model="BookingCtrl.period" name="period" min="BookingCtrl.today"></reservapet-date-picker>
+                    <p class="help-block" ng-if="form.name.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+                </div>
+                <div class="form-group" show-errors>
+                    <label>Raça</label>
+                    <ui-select name="breed" id="breed" ng-model="BookingCtrl.breedSelected" ng-required="true" ng-disabled="!BookingCtrl.booking.checkin">
+                        <ui-select-match>
+                            <span> {{ $select.selected.name | translate}}</span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="item in (BookingCtrl.breeds | filter: $select.search)">
+                            <span>{{ item.name | translate}}</span>
+                        </ui-select-choices>
+                    </ui-select>
+                    <p class="help-block" ng-if="form.breed.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+                </div>
+                <div class="form-group" show-errors>
+                    <label for="name">Nome</label>
+                    <input type="text" ng-model="BookCtl.booking.name" class="form-control" id="name" name="name" ng-required="true" ng-disabled="!Booking.breedSelected">
+                    <p class="help-block" ng-if="form.name.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+                </div>
+                <div class="form-group" show-errors>
+                    <label for="weight">Peso</label>
+                    <input type="number" ng-model="BookingCtrl.booking.weight" class="form-control" id="weight" name="weight" ng-required="true" ng-disabled="!Booking.breedSelected">
+                    <p class="help-block" ng-if="form.weight.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+                </div>
+                <div class="form-group" show-errors>
+                    <label for="email">E-mail</label>
+                    <input type="text" ng-model="BookingCtrl.booking.email" class="form-control" id="email" name="email" ng-required="true" ng-disabled="!Booking.breedSelected">
+                    <p class="help-block" ng-if="form.name.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+                </div>
+                <div class="form-group" show-errors>
+                    <label for="message">Mensagem</label>
+                    <textarea type="textarea" ng-model="BookingCtrl.booking.message"  name="message" rows="3" class="form-control" id="message" ng-disabled="!Booking.breedSelected"></textarea>
+                    <p class="help-block" ng-if="form.message.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+                </div>
+            </form>
+            <div class="" ng-if="BookingCtrl.showResume">
+                <hr/>
+                <h2>Resumo</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <span>Total de diárias</span>
+                        <h4 class="font-bold">{{BookingCtrl.days}}</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <span>Valor por diária</span>
+                        <h4 class="font-bold">{{BookingCtrl.plan.ammount}}</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <span>Valor total</span>
+                        <h4 class="font-bold">{{BookingCtrl.ammount}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox-footer">
+            <div class="pull-right">
+                <button class="btn btn-primary " ng-click="BookingCtrl.save()" type="button" ng-disabled="!BookingCtrl.showSend">
+                    <i class="fa fa-check"></i>&nbsp;Enviar
+                </button>
+                <button class="btn btn-warning" ng-click="BookingCtrl.save()" type="button">
+                    <i class="fa fa-times"></i>&nbsp;Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

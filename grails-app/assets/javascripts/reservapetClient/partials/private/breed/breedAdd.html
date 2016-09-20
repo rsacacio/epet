@@ -1,0 +1,37 @@
+<div class="animated fadeInRight">
+    <div class="ibox-title">
+        <h3>Adicionar</h3>
+    </div>
+    <div class="ibox-content">
+        <form name="form" novalidate>
+            <div class="form-group" show-errors>
+                <label for="name">Nome</label>
+                <input type="text" ng-model="BreedAddCtrl.breed.name" class="form-control" id="name" name="name" placeholder="Nome" ng-required="true">
+                <p class="help-block" ng-if="form.name.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <textarea type="textarea" ng-model="BreedAddCtrl.breed.description" class="form-control" id="description" rows="3" placeholder="Descrição"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Categoria</label>
+                <ui-select name="category" id="category" ng-model="BreedAddCtrl.categorySelected" ng-required="true">
+                    <ui-select-match>
+                        <span> {{ $select.selected.name | translate}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (BreedAddCtrl.categories | filter: $select.search)">
+                        <span>{{ item.name | translate}}</span>
+                    </ui-select-choices>
+                </ui-select>
+                <p class="help-block" ng-if="form.category.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+            </div>
+        </form>
+    </div>
+    <div class="ibox-footer">
+        <div class="pull-right">
+            <button class="btn btn-primary " type="button" ng-click="BreedAddCtrl.save()">
+                <i class="fa fa-check"></i>&nbsp;Salvar
+            </button>
+        </div>
+    </div>
+</div>

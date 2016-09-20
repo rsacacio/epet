@@ -1,0 +1,31 @@
+<div class="page-header">
+    <h1>Planos</h1>
+</div>
+<div class="tabs-container animated fadeInRight">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+                        <li role="presentation" ng-class="PlansCtrl.isActive('list')">
+                            <a ui-sref="private.plans.list">Listar</a>
+                        </li>
+                        <li ng-class="PlansCtrl.isActive('add')">
+                            <a ui-sref="private.plans.add">
+                                <i class="fa fa-plus"></i>
+                                Adicionar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins" ui-view="viewPlans"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

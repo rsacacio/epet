@@ -1,0 +1,25 @@
+<div class="animated fadeInRight">
+    <div class="ibox-title">
+        <h3>Adicionar</h3>
+    </div>
+    <div class="ibox-content">
+        <form name="form" novalidate>
+            <div class="form-group" show-errors>
+                <label for="name">Nome</label>
+                <input type="text" ng-model="CategoryAddCtrl.category.name" class="form-control" id="name" name="name" placeholder="Nome" ng-required="true">
+                <p class="help-block" ng-if="form.name.$error.required">{{ 'MESSAGE.FIELD_REQUIRED' | translate }}</p>
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <textarea type="textarea" ng-model="CategoryAddCtrl.category.description" class="form-control" id="description" rows="3" placeholder="Descrição"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="ibox-footer">
+        <div class="pull-right">
+            <button class="btn btn-primary " type="button" ng-click="CategoryAddCtrl.save()">
+                <i class="fa fa-check"></i>&nbsp;Salvar
+            </button>
+        </div>
+    </div>
+</div>
