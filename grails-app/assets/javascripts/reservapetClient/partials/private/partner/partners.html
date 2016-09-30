@@ -1,0 +1,31 @@
+<div class="page-header">
+    <h1>Raças</h1>
+</div>
+<div class="tabs-container animated fadeInRight">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+                        <li role="presentation" ng-class="PartnersCtrl.isActive('list')">
+                            <a ui-sref="private.partners.list">Listar</a>
+                        </li>
+                        <li ng-class="PartnersCtrl.isActive('add')">
+                            <a ui-sref="private.partners.add">
+                                <i class="fa fa-plus"></i>
+                                Adicionar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins" ui-view="viewPartners"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

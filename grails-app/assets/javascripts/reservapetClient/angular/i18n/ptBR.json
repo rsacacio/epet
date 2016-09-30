@@ -65,5 +65,13 @@
     "FORMAT_RANGE": "DD/MM/YYYY",
     "FORMAT": "dd/MM/yyyy",
     "FORMAT_TIME": "dd/MM/yyyy HH:mm:ss"
+  },
+  "PARTNERS": {
+    "LIST": {
+      "STATUS": {
+        "ACTIVE": "Ativo",
+        "INACTIVE": "Inativo"
+      }
+    }
   }
 }

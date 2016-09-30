@@ -8,6 +8,7 @@ class ReservapetUser {
     String name
     String email
     String password
+    String phone
     Date creation
     UserStatus status
     UserType type
@@ -16,6 +17,7 @@ class ReservapetUser {
         name nullable: false, maxSize: 255, minSize: 3
         password nullable: false, maxSize: 255
         email nullable: false, maxSize: 400
+        phone nullable: true, maxSize: 30
         creation nullable: false, maxSize: 30
         status nullable: false
         type nullable: false

@@ -172,6 +172,39 @@
                         }
                     }
                 })
+            .state(
+                'private.partners',
+                {
+                    url: '/partners',
+                    views: {
+                        'viewPrivate': {
+                            templateUrl: 'assets/reservapetClient/partials/private/partner/partners.html',
+                            controller : 'PartnersController as PartnersCtrl'
+                        }
+                    }
+                })
+            .state(
+                'private.partners.add',
+                {
+                    url: '/add',
+                    views: {
+                        'viewPartners': {
+                            templateUrl: 'assets/reservapetClient/partials/private/partner/partnerAdd.html',
+                            controller : 'PartnerAddController as PartnerAddCtrl'
+                        }
+                    }
+                })
+            .state(
+                'private.partners.list',
+                {
+                    url: '/list',
+                    views: {
+                        'viewPartners': {
+                            templateUrl: 'assets/reservapetClient/partials/private/partner/partnerList.html',
+                            controller : 'PartnerListController as PartnerListCtrl'
+                        }
+                    }
+                })
         ;
 
         $urlRouterProvider.otherwise('/book');

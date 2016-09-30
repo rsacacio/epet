@@ -2052,3 +2052,12 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
     background: #fff;
     color: #1cc09f;
 }
+
+.active-header{
+    border-bottom: 4px solid #19aa8d;
+}
+
+.navbar-default .navbar-nav > .active-header > a, .navbar-default .navbar-nav > .active-header > a:hover, .navbar-default .navbar-nav > .active-header > a:focus{
+    color: #555;
+    background-color: #e7e7e7;
+}

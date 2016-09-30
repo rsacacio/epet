@@ -17,7 +17,7 @@
 
         function isActive(path){
             var current = $location.path().split('/')[1];
-            return path === current ? 'active' : '';
+            return path === current ? 'active-header' : '';
         }
 
     }
