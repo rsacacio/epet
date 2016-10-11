@@ -6,7 +6,8 @@ import br.com.reservapet.breed.Breed
 
 class Book {
 
-    String name
+    String owner
+    String guest
     Breed breed
     Double weight
     Date creation
@@ -14,22 +15,31 @@ class Book {
     Date checkout
     String email
     String message
-    Double ammount
+    String phone
+//    Double ammount
     BookStatus status
     BookPaymentStatus paymentStatus
+    Boolean hasCardHealth
+    Boolean hasVaccines
+    Boolean acceptFlea
 
     static constraints = {
-        name nullable: false, maxSize: 255, minSize: 3
+        owner nullable: false, maxSize: 255, minSize: 3
+        guest nullable: false, maxSize: 255, minSize: 3
         breed nullable: false
         weight nullable: false
         creation nullable: false
         checkin nullable: false
         checkout nullable: false
         email nullable: false
+        phone nullable: false
         message nullable: false, maxSize: 400
-        ammount nullable: false
+//        ammount nullable: false
         status nullable: false
         paymentStatus nullable: false
+        hasCardHealth nullable: false
+        hasVaccines nullable: false
+        acceptFlea nullable: false
     }
 
     static mapping = {

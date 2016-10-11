@@ -16,8 +16,10 @@ class BookingController {
         Book book = new Book()
         book.status = BookStatus.BOOKING
         book.paymentStatus = BookPaymentStatus.PAID
-        book.breed = Breed.get(command.breedId)
+        book.breed = Breed.get(command.breadId)
         book.weight = command.weight
+        book.owner = command.owner
+        book.guest = command.guest
 
         book.checkin = command.checkin
         book.checkout = command.checkout
@@ -28,9 +30,18 @@ class BookingController {
             days = duration.days
         }
 
-        book.ammount = days * Plan.findByCategoryAndDays(book.breed.category, days).ammount
+//        book.ammount = days * Plan.findByCategoryAndDays(book.breed.category, days).ammount
         book.email = command.email
         book.message = command.message
+        book.phone = command.phone
+
+
+        book.hasCardHealth = command.hasCardHealth
+        book.hasVaccines = command.hasVaccines
+        book.acceptFlea = command.acceptFlea
+
+        book.creation = new Date()
+
         book.save(flush: true)
 
         respond success: true
@@ -55,10 +66,9 @@ class BookingController {
         breed.category.plans.each{Plan plan ->
             if(plan.days == params.days as int){
                 respond plan : new PlanResumeDto(id: plan.id, name: plan.name, ammount: plan.ammount)
-                return
             }
         }
-        respond plan: ''
+        respond plan: {}
     }
 
 }
